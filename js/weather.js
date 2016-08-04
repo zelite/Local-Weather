@@ -11,9 +11,17 @@ var coords = {};
 function getLocation(callback){
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(function(position){
-      $(coords).trigger("positionReady", position);
+      coords.lat = position.coords.latitude;
+      coords.lon = position.coords.longitude;
   });
-}}
+}else{
+  $.getJSON("https://geoip.nekudo.com/api/", function(json){
+    coords.lat = json.location.latitude;
+    coords.lon = json.location.longitude;
+  });}
+  $(coords).trigger("positionReady");
+
+}
 
 function getWeatherAtCoords(lat, lon, callback){
   //if no callback is given it writes the
@@ -31,7 +39,8 @@ function getWeatherAtCoords(lat, lon, callback){
 
 $(document).ready(function(){
   getLocation();
-  $(coords).on("positionReady", function(e, position){
-    getWeatherAtCoords(position.coords.latitude, position.coords.longitude, updateWeather);
+  $(coords).on("positionReady", function(e){
+    debugger;
+    getWeatherAtCoords(coords.lat, coords.lon, updateWeather);
   });
 });
