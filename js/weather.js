@@ -8,19 +8,22 @@ function updateWeather(json){
 
 var coords = {};
 
-function getLocation(callback){
-  if(navigator.geolocation){
-    navigator.geolocation.getCurrentPosition(function(position){
-      coords.lat = position.coords.latitude;
-      coords.lon = position.coords.longitude;
-  });
-}else{
+function getGeoIP(){
   $.getJSON("https://geoip.nekudo.com/api/", function(json){
     coords.lat = json.location.latitude;
     coords.lon = json.location.longitude;
   });}
   $(coords).trigger("positionReady");
+}
 
+function getLocation(callback){
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(function(position){
+      coords.lat = position.coords.latitude;
+      coords.lon = position.coords.longitude;
+  }, getGeoIP);
+}else{
+  getgeoIP();
 }
 
 function getWeatherAtCoords(lat, lon, callback){
