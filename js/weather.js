@@ -52,7 +52,6 @@ function updateWeather(json){
   $("#conditions").text(json.weather[0].description);
   $("#temperature-value").text(temp.C.toFixed(1)+"°C");
   $("#icon").html("<i class='wi wi-owm-"+json.weather[0].id+"'></i>");
-  console.log(temp.F);
 }
 
 function switchUnits(){
