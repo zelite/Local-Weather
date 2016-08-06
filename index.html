@@ -4,20 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Weather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/weather-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h1>Local Weather</h1>
+    <h1>Your Local Weather</h1>
     <div id="the-weather">
       <p id="location">
       </p>
+      <p id="icon"></p>
       <p id="conditions">
       </p>
-      <p id="temperature">
+      <p id="temperature"><i class="wi wi-thermometer"></i> <span id="temperature-value"></span>
+
       </p>
-      <p id="icon"></p>
+      <button id="switch-units" type="button" name="button">show Fahrenheit</button>
+
     </div>
+    <footer>made by <a href="http://zelite.github.io/">Zelite</a></footer>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"
     integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
     crossorigin="anonymous"></script>

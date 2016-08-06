@@ -1,3 +1,52 @@
-i{
-  font-size: 3rem;
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: #34495E;
+}
+
+
+
+h1{
+  font-size: 4rem;
+  text-align: center;
+  color: #fff;
+}
+
+
+#the-weather{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+#icon{
+  font-size: 8rem;
+  margin: 0.1rem;
+}
+
+p{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#switch-units{
+  font-size: 1rem;
+}
+
+footer{
+  margin-top: 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+footer a {
+  color: #AED6F1;
+}
+
+footer a:hover{
+  color: #F1C9AE;
 }
