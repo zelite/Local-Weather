@@ -14,8 +14,8 @@ function getGeoIP(){
 
 function failedLocation(jqXHR){
   $("#icon").html("<i class='wi wi-na'></i>");
-  $("#location").text("We were unable to get your location. "+
-  "It could be that your Adblocker is interfering with this. "+
+  $("#location").text("We were unable to get your location. Either you refused to give your location or "+
+  "it could be that your Adblocker is interfering with this. "+
   "If you want to know your local weather, you can go for a walk outsite or disable your adblocker and refresh the page ;-)"
 ).css("font-size", "1rem");
   $("#switch-units").attr("disabled", "disabled");
