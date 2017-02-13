@@ -40,7 +40,7 @@ function getWeatherAtCoords(lat, lon, callback){
   if (callback === undefined){
     callback = console.log;
   }
-  $.getJSON("https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather",
+  $.getJSON("https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather",
       {lat: lat,
        lon: lon,
        appid: "1eae30e4d32b455b6186088d36c0b4ca",
